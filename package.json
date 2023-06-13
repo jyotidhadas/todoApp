@@ -15,10 +15,18 @@
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
     "@angular/forms": "^16.0.0",
+    "@angular/material": "^16.0.4",
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "angular-feather": "^6.5.0",
+    "bootstrap": "^5.3.0",
+    "json-server": "^0.17.3",
+    "ng-bootstrap-datetime-angular": "^0.1.27",
+    "ng-pick-datetime": "^7.0.0",
+    "ngx-bootstrap": "^10.2.0",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^6.6.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
@@ -34,5 +42,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~5.0.2"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

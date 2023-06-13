@@ -1,0 +1,78 @@
+<nav class="navbar navbar-light ">
+    <div class="container-fluid">
+        <h1 >Angular To-Do App</h1>
+        <div class="d-flex">
+            <button class="btn"  routerLink="add-task">
+                Add Task
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <!-- <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container> -->
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="tasksname">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.taskName}} </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="taskDetails">
+        <mat-header-cell *matHeaderCellDef> Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.taskDetails}} </mat-cell>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="taskpriority">
+        <mat-header-cell *matHeaderCellDef> Priority </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.taskPriority}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="completionDate">
+        <mat-header-cell *matHeaderCellDef> Deadline </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.completionDate}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+      </ng-container>
+       
+      <ng-container matColumnDef="updateStatus">
+        <mat-header-cell *matHeaderCellDef>Update Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <div>
+            <input [(ngModel)]="completed" (change)="completed = ! completed" type="checkbox" name="completed" value="completed">
+            <label for="complete">Completed</label>
+            </div>
+             </mat-cell>
+      </ng-container>
+      
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <div class="action">
+                <span><i-feather name="edit" class="edit "></i-feather></span>
+                <span><i-feather name="delete" style="margin-left: 20px;" class="delete"></i-feather></span>
+            </div>
+        </mat-cell>
+
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
