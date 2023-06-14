@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiserviveService {
-base_url = "http://localhost:3000/tasks"
+base_url = "http://localhost:3000/tasks/"
   constructor(private http: HttpClient) { }
 
   postTask(data:any){
@@ -24,6 +24,13 @@ base_url = "http://localhost:3000/tasks"
     }))
 };
 
+getTaskById(id:Number){
+  return this.http.get<any>(this.base_url+id)
+  .pipe(map((res:any)=>{
+    return res;
+  }));
+}
+
   updateTask(data:any,id:number){
     return this.http.put<any>(this.base_url+id, data)
     .pipe(map((res:any)=>{
@@ -38,3 +45,5 @@ deleteTask(id:number){
     }));
   }
 }
+
+

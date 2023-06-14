@@ -7,7 +7,27 @@
   <title>Document</title>
 </head>
 <body>
-  <app-dashboard></app-dashboard>
+  <nav class="navbar navbar-light ">
+    <div class="container-fluid">
+        <h1 >Angular To-Do App</h1>
+        <div class="d-flex">
+          <button class="btn" routerLink="/">Home</button>
+          <button class="btn" routerLink="/dashboard">List of Tasks</button>
+            <button class="btn"  routerLink="add-task">
+                Add Task
+            </button>
+        </div>
+    </div>
+</nav>
+<div class="background-div" style="background-image: url('/todoApp/src/assets/background.jpg');">
+<div class="row">
+  <div class="col-4">
+    <h2 class="tag-line">Welcome to TO-DO LIST Application</h2>
+  </div>
+</div>
+</div>
+  <!-- <app-dashboard></app-dashboard> -->
   <router-outlet></router-outlet>
 </body>
+
 </html>

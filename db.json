@@ -1,28 +1,12 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "taskName": "",
-      "taskDetails": "",
-      "tasksPriority": null,
-      "completionDate": "",
-      "status": ""
-    },
-    {
-      "id": 2,
-      "taskName": "Complete today's task",
-      "taskDetails": "Angular project",
-      "taskPriority": "1",
-      "completionDate": "2023-06-14",
-      "status": "new"
-    },
-    {
       "id": 3,
-      "taskName": "Complete today's task",
-      "taskDetails": "Angular project",
-      "taskPriority": "1",
-      "completionDate": "2023-06-14",
-      "status": "new"
+      "taskName": "Complete today's taskrgverfgvr",
+      "taskDetails": "Angular project srfetfge",
+      "taskPriority": "2",
+      "completionDate": "2023-06-15",
+      "status": ""
     },
     {
       "id": 4,
