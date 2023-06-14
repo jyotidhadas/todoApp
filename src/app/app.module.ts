@@ -11,14 +11,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatTableModule} from "@angular/material/table";
 import { MatPaginatorModule} from "@angular/material/paginator";
 import { FeatherModule } from 'angular-feather';
-import {Edit, Delete} from 'angular-feather/icons';
+import {Edit, Delete, ArrowLeft} from 'angular-feather/icons';
 import {MatIconModule} from '@angular/material/icon';
 import swal from 'sweetalert2';
 import { from } from 'rxjs';
 
 
  const icons = {
-  Edit, Delete
+  Edit, Delete, ArrowLeft
  };
 
 
