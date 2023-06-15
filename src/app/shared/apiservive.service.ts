@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiserviveService {
-// base_url = "http://localhost:3000/tasks/";
-base_url = "https://json-server-api-9fwr.onrender.com/tasks/";
+ base_url = "http://localhost:3000/tasks/";
+// base_url = "https://json-server-api-9fwr.onrender.com/tasks/";
   constructor(private http: HttpClient) { }
 
   postTask(data:any){

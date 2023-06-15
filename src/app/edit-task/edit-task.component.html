@@ -14,11 +14,11 @@
 
         <div class="form-floating mb-3">
             <input type="name" formControlName="taskName" [(ngModel)]="taskName" required class="form-control" id="floatingInput" placeholder="task">
-            <label for="floatingInput">Task name</label>
+            <label for="floatingInput">Task name <span class="astrick-mark">*</span></label>
           </div>
           <div class="form-floating mb-3">
             <textarea type="text" formControlName="taskDetails" [(ngModel)]="taskDetails" required class="form-control" id="floatingPassword" placeholder="details" style="height:100px"></textarea>
-            <label for="floatingPassword">Task Details</label>
+            <label for="floatingPassword">Task Details <span class="astrick-mark">*</span></label>
           </div>
           <div class="form-floating mb-3">
             <select class="form-select" formControlName="taskPriority" [(ngModel)]="taskPriority" id="floatingSelect" aria-label="Floating label select example">
@@ -27,7 +27,7 @@
               <option value="2">medium</option>
               <option value="3">low</option>
             </select>
-            <label for="floatingSelect">Select option</label>
+            <label for="floatingSelect">Select Priority level <span class="astrick-mark">*</span></label>
           </div>
         
           <div class="form-floating mb-3">

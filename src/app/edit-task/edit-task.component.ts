@@ -32,10 +32,10 @@ export class EditTaskComponent implements OnInit {
   }
   ngOnInit(): void {
     this.formValue = this.fb.group({
-      taskName :[''],
-      taskDetails : [''],
-      taskPriority :[''],
-      completionDate : [ ''],
+      taskName :['',Validators.required],
+      taskDetails : ['', Validators.maxLength(100)],
+      taskPriority :['', Validators.required],
+      completionDate : [ '', Validators.required],
     })
 
    this.rowId = this.activateRoute.snapshot.params['id'];
@@ -65,26 +65,30 @@ export class EditTaskComponent implements OnInit {
   }
 
   updateTask(){
-    this.taskModelObj.taskName = this.formValue.value.taskName;
-    this.taskModelObj.taskDetails = this.formValue.value.taskDetails;
-    this.taskModelObj.taskPriority = this.formValue.value.taskPriority;
-    this.taskModelObj.completionDate = this.formValue.value.completionDate;
+ if(this.formValue.valid){
+  this.taskModelObj.taskName = this.formValue.value.taskName;
+  this.taskModelObj.taskDetails = this.formValue.value.taskDetails;
+  this.taskModelObj.taskPriority = this.formValue.value.taskPriority;
+  this.taskModelObj.completionDate = this.formValue.value.completionDate;
 
-    this.apiService.updateTask(this.taskModelObj,this.rowId).subscribe({
-      next:(data)=>{
-        
-        console.log(data);
-        alert("Task Updated Successfully");
-        this.formValue.reset();
-        this.getTaskData();
-        
-         this.route.navigateByUrl('/');
-      },
-      error:(error)=>{
-        console.log(error);
-      }
+  this.apiService.updateTask(this.taskModelObj,this.rowId).subscribe({
+    next:(data)=>{
       
-    })
+      console.log(data);
+      alert("Task Updated Successfully");
+      this.formValue.reset();
+      this.getTaskData();
+      
+       this.route.navigateByUrl('/');
+    },
+    error:(error)=>{
+      console.log(error);
+    }
+    
+  })
+ }else{
+  alert("Task cannot be update, please fill all required fields");
+ }
   }
 
 }

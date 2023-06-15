@@ -24,33 +24,39 @@ constructor(
 ngOnInit(){
 
   this.formValue = this.fb.group({
-    taskName :[''],
-    taskDetails : [''],
-    taskPriority :[''],
-    completionDate : [ ''],
+    taskName :['',Validators.required],
+    taskDetails : ['',Validators.maxLength(100)],
+    taskPriority :['',Validators.required],
+    completionDate : [ '',Validators.required],
   })
 }
 
 postTaskDetails(){
-  this.taskModelObj.taskName = this.formValue.value.taskName;
-  this.taskModelObj.taskDetails = this.formValue.value.taskDetails;
-  this.taskModelObj.taskPriority = this.formValue.value.taskPriority;
-  this.taskModelObj.completionDate = this.formValue.value.completionDate;
-  this.taskModelObj.status = "New";
+  if(this.formValue.valid){
 
-  this.apiService.postTask(this.taskModelObj).subscribe(
-    {
-      next: (data)=>{
-        console.log("respose: " +data);
-        alert("Task added successfully");
-        this.formValue.reset();
-        this.route.navigateByUrl('/');
-        
-      },
-      error: (error)=>{
-        console.log(error);
-      }
-    });
+    this.taskModelObj.taskName = this.formValue.value.taskName;
+    this.taskModelObj.taskDetails = this.formValue.value.taskDetails;
+    this.taskModelObj.taskPriority = this.formValue.value.taskPriority;
+    this.taskModelObj.completionDate = this.formValue.value.completionDate;
+    this.taskModelObj.status = "New";
+  
+    this.apiService.postTask(this.taskModelObj).subscribe(
+      {
+        next: (data)=>{
+          console.log("respose: " +data);
+          alert("Task added successfully");
+          this.formValue.reset();
+          this.route.navigateByUrl('/');
+          
+        },
+        error: (error)=>{
+          console.log(error);
+        }
+      });
+  }else{
+    alert("Task cannot be add, please fill all required fields");
+  }
+ 
     
 }
 }
